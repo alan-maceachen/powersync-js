@@ -67,16 +67,16 @@ export const useQuery = <T = any>(
   const abortController = React.useRef(new AbortController());
 
   const handleResult = (result: T[]) => {
+    setData(result);
     setIsLoading(false);
     setIsFetching(false);
-    setData(result);
     setError(undefined);
   };
 
   const handleError = (e: Error) => {
     setIsLoading(false);
-    setIsFetching(false);
     setData([]);
+    setIsFetching(false);
     const wrappedError = new Error('PowerSync failed to fetch data: ' + e.message);
     wrappedError.cause = e;
     setError(wrappedError);
