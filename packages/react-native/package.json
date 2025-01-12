@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "tsc -b",
+    "prepare": "npm run build",
     "clean": "rm -rf lib tsconfig.tsbuildinfo",
     "watch": "tsc -b -w"
   },

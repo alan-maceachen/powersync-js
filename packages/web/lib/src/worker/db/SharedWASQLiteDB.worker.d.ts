@@ -1,0 +1,1 @@
+import '@journeyapps/wa-sqlite';
